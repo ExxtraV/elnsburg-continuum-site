@@ -1,79 +1,57 @@
 import { NextRequest, NextResponse } from "next/server";
 
 type Payload = {
-  series: string;           // e.g., "Power, Curses, & Broken Promises"
-  chapter: number;          // e.g., 3
-  title: string;            // e.g., "Chapter 3 — Goat Diplomacy"
-  date: string;             // e.g., "2025-08-09"
+  series: string;
+  chapter: number;
+  title: string;
+  date: string;
   synopsis?: string;
-  status?: string;          // e.g., "draft" | "published"
-  characters?: string;      // comma-separated: "Iskra, Nestle"
-  content: string;          // MDX body (no frontmatter)
+  status?: string;
+  characters?: string; // comma-separated
+  content: string;     // MDX body (no frontmatter)
 };
 
 function slugify(input: string) {
-  return input
-    .toLowerCase()
-    .trim()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+  return input.toLowerCase().trim().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
 }
-
-function pad3(n: number) {
-  return String(n).padStart(3, "0");
-}
+const pad3 = (n: number) => String(n).padStart(3, "0");
 
 export async function POST(req: NextRequest) {
-  const secret = req.headers.get("x-admin-secret");
-  if (!secret || secret !== process.env.ADMIN_PASSWORD) {
+  // simple auth
+  if (req.headers.get("x-admin-secret") !== process.env.ADMIN_PASSWORD) {
     return new NextResponse("Unauthorized", { status: 401 });
   }
 
-  const {
-    series,
-    chapter,
-    title,
-    date,
-    synopsis = "",
-    status = "draft",
-    characters = "",
-    content,
-  } = (await req.json()) as Payload;
+  const body = (await req.json()) as Payload;
+  const { series, chapter, title, date, synopsis = "", status = "draft", characters = "", content } = body;
 
   if (!series || !chapter || !title || !date || !content) {
-    return NextResponse.json(
-      { error: "Missing required fields (series, chapter, title, date, content)" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "Missing required fields (series, chapter, title, date, content)" }, { status: 400 });
   }
 
   const seriesSlug = slugify(series);
   const chapterId = pad3(chapter);
 
-  // Frontmatter (YAML)
   const characterList = characters
     .split(",")
     .map((s) => s.trim())
     .filter(Boolean);
 
-  const fm = [
-    "---",
-    `title: ${JSON.stringify(title)}`,
-    `chapter: ${chapter}`,
-    `date: ${JSON.stringify(date)}`,
-    `series: ${JSON.stringify(series)}`,
-    synopsis ? `synopsis: ${JSON.stringify(synopsis)}` : null,
-    status ? `status: ${JSON.stringify(status)}` : null,
-    `characters: [${characterList.map((c) => JSON.stringify(c)).join(", ")}]`,
-    "---",
-    "",
-  ]
-    .filter(Boolean)
-    .join("\n");
+  // Build YAML frontmatter deterministically with explicit newlines
+  const frontmatter =
+`---
+title: ${JSON.stringify(title)}
+chapter: ${chapter}
+date: ${JSON.stringify(date)}
+series: ${JSON.stringify(series)}
+${synopsis ? `synopsis: ${JSON.stringify(synopsis)}\n` : ""}${status ? `status: ${JSON.stringify(status)}\n` : ""}characters: [${characterList.map((c) => JSON.stringify(c)).join(", ")}]
+---
+`;
 
-  const mdx = `${fm}${content.endsWith("\n") ? content : content + "\n"}`;
+  // Ensure exactly one blank line between FM and content, and a trailing newline
+  const mdx = `${frontmatter}${content.trim()}\n`;
 
+  // GitHub commit
   const repo = process.env.GITHUB_REPO!;
   const [owner, repoName] = repo.split("/");
   const branch = process.env.GITHUB_DEFAULT_BRANCH || "main";
@@ -88,39 +66,31 @@ export async function POST(req: NextRequest) {
     "X-GitHub-Api-Version": "2022-11-28",
   };
 
-  // Check if file exists to get SHA (needed for updates)
+  // find existing sha
   let sha: string | undefined;
-  {
-    const res = await fetch(`${contentsUrl}?ref=${branch}`, { headers });
-    if (res.ok) {
-      const json = (await res.json()) as { sha?: string };
-      sha = json.sha;
-    }
+  const head = await fetch(`${contentsUrl}?ref=${branch}`, { headers });
+  if (head.ok) {
+    const j = (await head.json()) as { sha?: string };
+    sha = j.sha;
   }
 
-  const message = `${sha ? "chore" : "feat"}(chapter): ${series} ch${chapterId} — ${title}`;
-  const body = {
-    message,
-    content: Buffer.from(mdx, "utf8").toString("base64"),
-    branch,
-    ...(sha ? { sha } : {}),
-  };
-
+  const commitMessage = `${sha ? "chore" : "feat"}(chapter): ${series} ch${chapterId} — ${title}`;
   const put = await fetch(contentsUrl, {
     method: "PUT",
     headers,
-    body: JSON.stringify(body),
+    body: JSON.stringify({
+      message: commitMessage,
+      content: Buffer.from(mdx, "utf8").toString("base64"),
+      branch,
+      ...(sha ? { sha } : {}),
+    }),
   });
 
   if (!put.ok) {
-    const text = await put.text().catch(() => "");
-    return NextResponse.json(
-      { error: "GitHub PUT failed", details: text || put.statusText },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: "GitHub PUT failed", details: await put.text() }, { status: 500 });
   }
 
-  const json = (await put.json()) as any;
+  const json = await put.json();
   const fileUrl = json?.content?.html_url ?? null;
   const previewSlug = `/novels/${seriesSlug}/${chapterId}`;
 
