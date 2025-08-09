@@ -1,0 +1,124 @@
+{
+  "cacheItemsMap": {
+    "wiki/elnsburg-overview.mdx": {
+      "document": {
+        "title": "Elnsburg — The City of Tiers",
+        "summary": "High Elnsburg, Mid Elnsburg, and Low Elnsburg — and the factions that bind them.",
+        "tags": [
+          "overview",
+          "geography",
+          "factions"
+        ],
+        "body": {
+          "raw": "\nElnsburg is divided into three tiers with a council tangled between Matriarchs and Patriarchs.\n",
+          "code": "var Component=(()=>{var l=Object.create;var o=Object.defineProperty;var g=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,b=Object.prototype.hasOwnProperty;var p=(t,n)=>()=>(n||t((n={exports:{}}).exports,n),n.exports),x=(t,n)=>{for(var e in n)o(t,e,{get:n[e],enumerable:!0})},a=(t,n,e,s)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of m(n))!b.call(t,r)&&r!==e&&o(t,r,{get:()=>n[r],enumerable:!(s=g(n,r))||s.enumerable});return t};var w=(t,n,e)=>(e=t!=null?l(f(t)):{},a(n||!t||!t.__esModule?o(e,\"default\",{value:t,enumerable:!0}):e,t)),E=t=>a(o({},\"__esModule\",{value:!0}),t);var u=p((j,c)=>{c.exports=_jsx_runtime});var _={};x(_,{default:()=>h,frontmatter:()=>M});var i=w(u()),M={title:\"Elnsburg \\u2014 The City of Tiers\",summary:\"High Elnsburg, Mid Elnsburg, and Low Elnsburg \\u2014 and the factions that bind them.\",tags:[\"overview\",\"geography\",\"factions\"]};function d(t){let n={p:\"p\",...t.components};return(0,i.jsx)(n.p,{children:\"Elnsburg is divided into three tiers with a council tangled between Matriarchs and Patriarchs.\"})}function h(t={}){let{wrapper:n}=t.components||{};return n?(0,i.jsx)(n,{...t,children:(0,i.jsx)(d,{...t})}):d(t)}return E(_);})();\n;return Component;"
+        },
+        "_id": "wiki/elnsburg-overview.mdx",
+        "_raw": {
+          "sourceFilePath": "wiki/elnsburg-overview.mdx",
+          "sourceFileName": "elnsburg-overview.mdx",
+          "sourceFileDir": "wiki",
+          "contentType": "mdx",
+          "flattenedPath": "wiki/elnsburg-overview"
+        },
+        "type": "Wiki",
+        "slug": "/wiki/elnsburg-overview"
+      },
+      "documentHash": "1754713232000",
+      "hasWarnings": false,
+      "documentTypeName": "Wiki"
+    },
+    "wiki/magic-curses.mdx": {
+      "document": {
+        "title": "On Curses and Their Permanence",
+        "summary": "A primer on the rules and risks of curses in the Continuum.",
+        "tags": [
+          "magic",
+          "curses"
+        ],
+        "body": {
+          "raw": "\nCurses are permanent in this setting; breaking them has a cost even saints decline to pay.\n",
+          "code": "var Component=(()=>{var h=Object.create;var s=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var x=Object.getOwnPropertyNames;var f=Object.getPrototypeOf,l=Object.prototype.hasOwnProperty;var C=(e,n)=>()=>(n||e((n={exports:{}}).exports,n),n.exports),_=(e,n)=>{for(var t in n)s(e,t,{get:n[t],enumerable:!0})},i=(e,n,t,a)=>{if(n&&typeof n==\"object\"||typeof n==\"function\")for(let r of x(n))!l.call(e,r)&&r!==t&&s(e,r,{get:()=>n[r],enumerable:!(a=d(n,r))||a.enumerable});return e};var g=(e,n,t)=>(t=e!=null?h(f(e)):{},i(n||!e||!e.__esModule?s(t,\"default\",{value:e,enumerable:!0}):t,e)),j=e=>i(s({},\"__esModule\",{value:!0}),e);var m=C((D,c)=>{c.exports=_jsx_runtime});var M={};_(M,{default:()=>p,frontmatter:()=>y});var o=g(m()),y={title:\"On Curses and Their Permanence\",summary:\"A primer on the rules and risks of curses in the Continuum.\",tags:[\"magic\",\"curses\"]};function u(e){let n={p:\"p\",...e.components};return(0,o.jsx)(n.p,{children:\"Curses are permanent in this setting; breaking them has a cost even saints decline to pay.\"})}function p(e={}){let{wrapper:n}=e.components||{};return n?(0,o.jsx)(n,{...e,children:(0,o.jsx)(u,{...e})}):u(e)}return j(M);})();\n;return Component;"
+        },
+        "_id": "wiki/magic-curses.mdx",
+        "_raw": {
+          "sourceFilePath": "wiki/magic-curses.mdx",
+          "sourceFileName": "magic-curses.mdx",
+          "sourceFileDir": "wiki",
+          "contentType": "mdx",
+          "flattenedPath": "wiki/magic-curses"
+        },
+        "type": "Wiki",
+        "slug": "/wiki/magic-curses"
+      },
+      "documentHash": "1754713232000",
+      "hasWarnings": false,
+      "documentTypeName": "Wiki"
+    },
+    "novels/power-curses-broken-promises/chapters/001.mdx": {
+      "document": {
+        "title": "Chapter 1 — Goatprints on Marble",
+        "chapter": 1,
+        "date": "2025-08-01T00:00:00.000Z",
+        "series": "Power, Curses, & Broken Promises",
+        "synopsis": "A curse, a city, and a very stubborn girl.",
+        "status": "draft",
+        "characters": [
+          "Iskra",
+          "Nestle",
+          "Seren"
+        ],
+        "body": {
+          "raw": "\nWelcome to **Elnsburg**, where saints smile and consequences collect.\n\n<Spoiler>\nThis is a demo spoiler block you can remove.\n</Spoiler>\n\nSee also <WikiLink slug=\"elnsburg-overview\">the city overview</WikiLink>.\n",
+          "code": "var Component=(()=>{var m=Object.create;var i=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var f=Object.getOwnPropertyNames;var g=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var b=(r,e)=>()=>(e||r((e={exports:{}}).exports,e),e.exports),k=(r,e)=>{for(var n in e)i(r,n,{get:e[n],enumerable:!0})},c=(r,e,n,o)=>{if(e&&typeof e==\"object\"||typeof e==\"function\")for(let s of f(e))!x.call(r,s)&&s!==n&&i(r,s,{get:()=>e[s],enumerable:!(o=h(e,s))||o.enumerable});return r};var y=(r,e,n)=>(n=r!=null?m(g(r)):{},c(e||!r||!r.__esModule?i(n,\"default\",{value:r,enumerable:!0}):n,r)),_=r=>c(i({},\"__esModule\",{value:!0}),r);var l=b((M,a)=>{a.exports=_jsx_runtime});var w={};k(w,{default:()=>u,frontmatter:()=>v});var t=y(l()),v={title:\"Chapter 1 \\u2014 Goatprints on Marble\",chapter:1,date:\"2025-08-01\",series:\"Power, Curses, & Broken Promises\",synopsis:\"A curse, a city, and a very stubborn girl.\",status:\"draft\",characters:[\"Iskra\",\"Nestle\",\"Seren\"]};function d(r){let e={p:\"p\",strong:\"strong\",...r.components},{Spoiler:n,WikiLink:o}=e;return n||p(\"Spoiler\",!0),o||p(\"WikiLink\",!0),(0,t.jsxs)(t.Fragment,{children:[(0,t.jsxs)(e.p,{children:[\"Welcome to \",(0,t.jsx)(e.strong,{children:\"Elnsburg\"}),\", where saints smile and consequences collect.\"]}),`\n`,(0,t.jsx)(n,{children:(0,t.jsx)(e.p,{children:\"This is a demo spoiler block you can remove.\"})}),`\n`,(0,t.jsxs)(e.p,{children:[\"See also \",(0,t.jsx)(o,{slug:\"elnsburg-overview\",children:\"the city overview\"}),\".\"]})]})}function u(r={}){let{wrapper:e}=r.components||{};return e?(0,t.jsx)(e,{...r,children:(0,t.jsx)(d,{...r})}):d(r)}function p(r,e){throw new Error(\"Expected \"+(e?\"component\":\"object\")+\" `\"+r+\"` to be defined: you likely forgot to import, pass, or provide it.\")}return _(w);})();\n;return Component;"
+        },
+        "_id": "novels/power-curses-broken-promises/chapters/001.mdx",
+        "_raw": {
+          "sourceFilePath": "novels/power-curses-broken-promises/chapters/001.mdx",
+          "sourceFileName": "001.mdx",
+          "sourceFileDir": "novels/power-curses-broken-promises/chapters",
+          "contentType": "mdx",
+          "flattenedPath": "novels/power-curses-broken-promises/chapters/001"
+        },
+        "type": "Chapter",
+        "slug": "/novels/power-curses-broken-promises/001",
+        "seriesSlug": "power-curses-broken-promises"
+      },
+      "documentHash": "1754713232000",
+      "hasWarnings": false,
+      "documentTypeName": "Chapter"
+    },
+    "novels/power-curses-broken-promises/chapters/002.mdx": {
+      "document": {
+        "title": "Chapter 2 — The Tea That Talked Back",
+        "chapter": 2,
+        "date": "2025-08-03T00:00:00.000Z",
+        "series": "Power, Curses, & Broken Promises",
+        "synopsis": "Coffee argues. Tea negotiates. Iskra ignores both.",
+        "status": "draft",
+        "characters": [
+          "Iskra",
+          "Nestle"
+        ],
+        "body": {
+          "raw": "\nSecond chapters are for making promises you may or may not keep.\n",
+          "code": "var Component=(()=>{var f=Object.create;var n=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var k=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var l=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),y=(e,t)=>{for(var r in t)n(e,r,{get:t[r],enumerable:!0})},c=(e,t,r,a)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let o of d(t))!x.call(e,o)&&o!==r&&n(e,o,{get:()=>t[o],enumerable:!(a=h(t,o))||a.enumerable});return e};var C=(e,t,r)=>(r=e!=null?f(k(e)):{},c(t||!e||!e.__esModule?n(r,\"default\",{value:e,enumerable:!0}):r,e)),T=e=>c(n({},\"__esModule\",{value:!0}),e);var m=l((M,i)=>{i.exports=_jsx_runtime});var g={};y(g,{default:()=>u,frontmatter:()=>_});var s=C(m()),_={title:\"Chapter 2 \\u2014 The Tea That Talked Back\",chapter:2,date:\"2025-08-03\",series:\"Power, Curses, & Broken Promises\",synopsis:\"Coffee argues. Tea negotiates. Iskra ignores both.\",status:\"draft\",characters:[\"Iskra\",\"Nestle\"]};function p(e){let t={p:\"p\",...e.components};return(0,s.jsx)(t.p,{children:\"Second chapters are for making promises you may or may not keep.\"})}function u(e={}){let{wrapper:t}=e.components||{};return t?(0,s.jsx)(t,{...e,children:(0,s.jsx)(p,{...e})}):p(e)}return T(g);})();\n;return Component;"
+        },
+        "_id": "novels/power-curses-broken-promises/chapters/002.mdx",
+        "_raw": {
+          "sourceFilePath": "novels/power-curses-broken-promises/chapters/002.mdx",
+          "sourceFileName": "002.mdx",
+          "sourceFileDir": "novels/power-curses-broken-promises/chapters",
+          "contentType": "mdx",
+          "flattenedPath": "novels/power-curses-broken-promises/chapters/002"
+        },
+        "type": "Chapter",
+        "slug": "/novels/power-curses-broken-promises/002",
+        "seriesSlug": "power-curses-broken-promises"
+      },
+      "documentHash": "1754713232000",
+      "hasWarnings": false,
+      "documentTypeName": "Chapter"
+    }
+  }
+}

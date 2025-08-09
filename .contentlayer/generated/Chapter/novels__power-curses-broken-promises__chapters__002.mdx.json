@@ -1,0 +1,27 @@
+{
+  "title": "Chapter 2 — The Tea That Talked Back",
+  "chapter": 2,
+  "date": "2025-08-03T00:00:00.000Z",
+  "series": "Power, Curses, & Broken Promises",
+  "synopsis": "Coffee argues. Tea negotiates. Iskra ignores both.",
+  "status": "draft",
+  "characters": [
+    "Iskra",
+    "Nestle"
+  ],
+  "body": {
+    "raw": "\nSecond chapters are for making promises you may or may not keep.\n",
+    "code": "var Component=(()=>{var f=Object.create;var n=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var k=Object.getPrototypeOf,x=Object.prototype.hasOwnProperty;var l=(e,t)=>()=>(t||e((t={exports:{}}).exports,t),t.exports),y=(e,t)=>{for(var r in t)n(e,r,{get:t[r],enumerable:!0})},c=(e,t,r,a)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let o of d(t))!x.call(e,o)&&o!==r&&n(e,o,{get:()=>t[o],enumerable:!(a=h(t,o))||a.enumerable});return e};var C=(e,t,r)=>(r=e!=null?f(k(e)):{},c(t||!e||!e.__esModule?n(r,\"default\",{value:e,enumerable:!0}):r,e)),T=e=>c(n({},\"__esModule\",{value:!0}),e);var m=l((M,i)=>{i.exports=_jsx_runtime});var g={};y(g,{default:()=>u,frontmatter:()=>_});var s=C(m()),_={title:\"Chapter 2 \\u2014 The Tea That Talked Back\",chapter:2,date:\"2025-08-03\",series:\"Power, Curses, & Broken Promises\",synopsis:\"Coffee argues. Tea negotiates. Iskra ignores both.\",status:\"draft\",characters:[\"Iskra\",\"Nestle\"]};function p(e){let t={p:\"p\",...e.components};return(0,s.jsx)(t.p,{children:\"Second chapters are for making promises you may or may not keep.\"})}function u(e={}){let{wrapper:t}=e.components||{};return t?(0,s.jsx)(t,{...e,children:(0,s.jsx)(p,{...e})}):p(e)}return T(g);})();\n;return Component;"
+  },
+  "_id": "novels/power-curses-broken-promises/chapters/002.mdx",
+  "_raw": {
+    "sourceFilePath": "novels/power-curses-broken-promises/chapters/002.mdx",
+    "sourceFileName": "002.mdx",
+    "sourceFileDir": "novels/power-curses-broken-promises/chapters",
+    "contentType": "mdx",
+    "flattenedPath": "novels/power-curses-broken-promises/chapters/002"
+  },
+  "type": "Chapter",
+  "slug": "/novels/power-curses-broken-promises/002",
+  "seriesSlug": "power-curses-broken-promises"
+}

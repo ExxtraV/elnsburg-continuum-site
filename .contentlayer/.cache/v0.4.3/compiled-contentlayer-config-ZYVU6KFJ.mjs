@@ -1,9 +1,9 @@
+// contentlayer.config.ts
 import { defineDocumentType, makeSource } from "@contentlayer2/source-files";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
-
-export const Chapter = defineDocumentType(() => ({
+var Chapter = defineDocumentType(() => ({
   name: "Chapter",
   filePathPattern: `novels/**/chapters/*.mdx`,
   contentType: "mdx",
@@ -32,8 +32,7 @@ export const Chapter = defineDocumentType(() => ({
     }
   }
 }));
-
-export const Wiki = defineDocumentType(() => ({
+var Wiki = defineDocumentType(() => ({
   name: "Wiki",
   filePathPattern: `wiki/**/*.mdx`,
   contentType: "mdx",
@@ -49,8 +48,7 @@ export const Wiki = defineDocumentType(() => ({
     }
   }
 }));
-
-export default makeSource({
+var contentlayer_config_default = makeSource({
   contentDirPath: "content",
   documentTypes: [Chapter, Wiki],
   mdx: {
@@ -58,3 +56,9 @@ export default makeSource({
     rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]]
   }
 });
+export {
+  Chapter,
+  Wiki,
+  contentlayer_config_default as default
+};
+//# sourceMappingURL=compiled-contentlayer-config-ZYVU6KFJ.mjs.map

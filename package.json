@@ -9,10 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentlayer2/core": "0.4.3",
-    "@contentlayer2/source-files": "0.4.3",
+    "@contentlayer2/core": "^0.4.3",
+    "@contentlayer2/source-files": "^0.4.3",
     "next": "14.2.5",
-    "next-contentlayer2": "0.4.0",
+    "next-contentlayer2": "^0.4.3",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "remark-gfm": "4.0.0",
@@ -21,7 +21,7 @@
     "clsx": "2.1.1"
   },
   "devDependencies": {
-    "@contentlayer2/cli": "0.4.3",
+    "@contentlayer2/cli": "^0.4.3",
     "@tailwindcss/typography": "0.5.13",
     "@types/node": "20.11.30",
     "@types/react": "18.2.45",
