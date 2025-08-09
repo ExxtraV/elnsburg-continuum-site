@@ -1,9 +1,7 @@
-import { withContentlayer } from "next-contentlayer";
+import { withContentlayer } from "next-contentlayer2";
 
 const nextConfig = {
-  experimental: {
-    mdxRs: true
-  }
+  experimental: { mdxRs: true }
 };
 
 export default withContentlayer(nextConfig);

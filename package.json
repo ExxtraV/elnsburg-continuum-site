@@ -2,9 +2,9 @@
   "name": "elnsburg-continuum",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
+"scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "contentlayer build && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -12,7 +12,7 @@
     "@contentlayer/core": "0.3.4",
     "contentlayer": "0.3.4",
     "next": "14.2.5",
-    "next-contentlayer": "0.3.4",
+    "next-contentlayer2": "^0.4.0",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "remark-gfm": "4.0.0",
@@ -21,6 +21,7 @@
     "clsx": "2.1.1"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "0.5.13",
     "@types/node": "20.11.30",
     "@types/react": "18.2.45",
     "@types/react-dom": "18.2.18",
@@ -28,5 +29,7 @@
     "postcss": "8.4.38",
     "tailwindcss": "3.4.7",
     "typescript": "5.4.5"
-  }
+  },
+  "engines": { "node": ">=20" }
 }
+
