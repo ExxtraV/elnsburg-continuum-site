@@ -8,6 +8,15 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        parchment: "#f5f1e8",
+        "night-sky": "#0f0b2d",
+        "royal-gold": "#eab308"
+      },
+      fontFamily: {
+        heading: ["var(--font-heading)", "serif"],
+        body: ["var(--font-body)", "serif"]
+      },
       typography: {
         DEFAULT: {
           css: {

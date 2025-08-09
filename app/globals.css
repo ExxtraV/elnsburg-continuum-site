@@ -7,8 +7,14 @@
 }
 
 body {
-  @apply bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100;
+  @apply font-body;
 }
 
-.prose a { @apply underline underline-offset-2; }
-nav a { @apply hover:underline underline-offset-4; }
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-royal-gold;
+  }
+}
+
+.prose a { @apply underline underline-offset-2 text-royal-gold hover:text-yellow-300; }
+nav a { @apply hover:text-royal-gold transition-colors; }

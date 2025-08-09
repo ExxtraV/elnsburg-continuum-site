@@ -25,7 +25,7 @@ export default function ChapterPage({ params }: { params: { series: string; chap
   const next = idx < seriesChapters.length - 1 ? seriesChapters[idx + 1] : null;
 
   return (
-    <article className="prose dark:prose-invert mx-auto">
+    <article className="prose prose-invert prose-headings:font-heading prose-headings:text-royal-gold mx-auto">
       <h1>{doc.title}</h1>
       <MDXContent code={doc.body.code} />
       <hr />
@@ -33,7 +33,7 @@ export default function ChapterPage({ params }: { params: { series: string; chap
         <div>{prev && <Link href={prev.slug}>← {prev.title}</Link>}</div>
         <div>{next && <Link href={next.slug}>{next.title} →</Link>}</div>
       </nav>
-      <p className="text-xs text-zinc-500 mt-8">Series: {doc.series} • Chapter {doc.chapter}</p>
+      <p className="text-xs text-parchment/70 mt-8">Series: {doc.series} • Chapter {doc.chapter}</p>
     </article>
   );
 }
