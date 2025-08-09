@@ -14,7 +14,7 @@ export default function HomePage() {
           The flagship webnovel in the Elnsburg Continuum — a city of saints, curses, and political factions.
         </p>
         <div>
-          <Link href={`/novels/${mainSeries}/001`} className="inline-block rounded px-4 py-2 bg-royal-gold text-night-sky font-bold hover:bg-yellow-400">
+          <Link href={`/novels/power-curses-and-broken-promises/001`} className="inline-block rounded px-4 py-2 bg-royal-gold text-night-sky font-bold hover:bg-yellow-400">
             Start at Chapter 1
           </Link>
         </div>
