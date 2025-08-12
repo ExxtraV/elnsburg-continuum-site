@@ -4,5 +4,6 @@ node_modules
 dist
 .out
 *.log
+.contentlayer
 .env
 .env.*
