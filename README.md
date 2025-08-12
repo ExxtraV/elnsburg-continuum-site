@@ -27,6 +27,15 @@ An admin interface is available for quickly creating content without touching th
 - `(/admin)` for novel chapters
 - `(/admin/wiki)` for wiki entries
 
+## Authentication
+
+Sign in at `/login` using the demo credentials:
+
+- **username**: `demo`
+- **password**: `demo`
+
+Once authenticated, readers can mark chapters as read and bookmark their favourites.
+
 ## Authoring
 
 Use double brackets to link to wiki pages. Writing `[[elnsburg-overview]]` in your
