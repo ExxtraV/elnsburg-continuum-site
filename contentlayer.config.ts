@@ -2,6 +2,7 @@ import { defineDocumentType, makeSource } from "@contentlayer2/source-files";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
+import remarkWikiLinks from "./lib/remark-wikilinks";
 
 export const Chapter = defineDocumentType(() => ({
   name: "Chapter",
@@ -54,7 +55,7 @@ export default makeSource({
   contentDirPath: "content",
   documentTypes: [Chapter, Wiki],
   mdx: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkWikiLinks],
     rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]]
   }
 });
