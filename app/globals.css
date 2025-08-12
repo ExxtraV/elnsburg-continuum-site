@@ -4,6 +4,8 @@
 
 :root {
   color-scheme: light dark;
+  --reader-font-size: 16px;
+  --reader-line-height: 1.75;
 }
 
 body {
@@ -18,3 +20,8 @@ body {
 
 .prose a { @apply underline underline-offset-2 text-royal-gold hover:text-yellow-300; }
 nav a { @apply hover:text-royal-gold transition-colors; }
+
+.reader-content {
+  font-size: var(--reader-font-size);
+  line-height: var(--reader-line-height);
+}
