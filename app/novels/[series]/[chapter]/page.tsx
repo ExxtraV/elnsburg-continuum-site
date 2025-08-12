@@ -2,6 +2,7 @@ import { allChapters } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXContent } from "@/components/mdx-content";
+import { ChapterProgress } from "@/components/chapter-progress";
 
 export function generateStaticParams() {
   return allChapters.map((c) => ({
@@ -26,7 +27,10 @@ export default function ChapterPage({ params }: { params: { series: string; chap
 
   return (
     <article className="prose prose-invert prose-headings:font-heading prose-headings:text-royal-gold mx-auto">
-      <h1>{doc.title}</h1>
+      <h1>
+        {doc.title}
+        <ChapterProgress series={doc.seriesSlug} chapter={doc.chapter} />
+      </h1>
       <MDXContent code={doc.body.code} />
       <hr />
       <nav className="flex justify-between text-sm">
