@@ -34,6 +34,14 @@ export default function HomePage() {
             </Link>
           )}
         </div>
+        <div>
+          <Link
+            href="/novels"
+            className="text-sm text-royal-gold hover:underline"
+          >
+            All Novels
+          </Link>
+        </div>
       </section>
 
       {latest && (
