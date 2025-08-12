@@ -4,15 +4,25 @@ import { useMDXComponent } from 'next-contentlayer2/hooks';
 import Link from 'next/link';
 
 const components = {
-  a: (props: any) => <a {...props} />,
+  a: ({ href, children, ...rest }: any) => {
+    if (href?.startsWith('/')) {
+      return (
+        <Link href={href} {...rest}>
+          {children}
+        </Link>
+      );
+    }
+    return (
+      <a href={href} {...rest}>
+        {children}
+      </a>
+    );
+  },
   Spoiler: ({ children }: { children: React.ReactNode }) => (
     <details>
       <summary>Spoiler</summary>
       <div>{children}</div>
     </details>
-  ),
-  WikiLink: ({ slug, children }: { slug: string; children: React.ReactNode }) => (
-    <Link href={`/wiki/${slug}`}>{children}</Link>
   ),
 } as const;
 

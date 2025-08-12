@@ -27,6 +27,11 @@ An admin interface is available for quickly creating content without touching th
 - `(/admin)` for novel chapters
 - `(/admin/wiki)` for wiki entries
 
+## Authoring
+
+Use double brackets to link to wiki pages. Writing `[[elnsburg-overview]]` in your
+chapter or wiki entry will automatically link to `/wiki/elnsburg-overview`.
+
 ## Deploy
 - Vercel recommended: import repo, set `NEXT_PUBLIC_SITE_URL` env (e.g., https://your-domain)
 - Static hosting also works with `next export` (limited features).

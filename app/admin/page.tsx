@@ -43,7 +43,7 @@ export default function AdminPage() {
 
 <Spoiler>Optional spoiler block</Spoiler>
 
-See <WikiLink slug="elnsburg-overview">Elnsburg overview</WikiLink>.`
+See [[elnsburg-overview]].`
   );
 
   // Wiki fields
