@@ -1,5 +1,5 @@
 import { allChapters } from 'contentlayer/generated';
-import Link from 'next/link';
+import ChapterListItem from '@/components/chapter-list-item';
 import { notFound } from 'next/navigation';
 
 export function generateStaticParams() {
@@ -17,10 +17,7 @@ export default function SeriesPage({ params }: { params: { series: string } }) {
       <h1 className="text-4xl font-heading text-royal-gold">{chapters[0].series}</h1>
       <ul className="space-y-3">
         {chapters.map(c => (
-          <li key={c._id} className="border border-royal-gold/30 bg-night-sky/40 backdrop-blur-sm p-4 rounded">
-            <Link href={c.slug} className="font-heading text-royal-gold">Chapter {c.chapter}: {c.title}</Link>
-            {c.synopsis && <p className="text-sm mt-2 text-parchment/80">{c.synopsis}</p>}
-          </li>
+          <ChapterListItem key={c._id} chapter={c} />
         ))}
       </ul>
     </div>

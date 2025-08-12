@@ -2,6 +2,7 @@ import { allChapters } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXContent } from "@/components/mdx-content";
+import { ChapterActions } from "@/components/chapter-actions";
 
 export function generateStaticParams() {
   return allChapters.map((c) => ({
@@ -27,6 +28,7 @@ export default function ChapterPage({ params }: { params: { series: string; chap
   return (
     <article className="prose prose-invert prose-headings:font-heading prose-headings:text-royal-gold mx-auto">
       <h1>{doc.title}</h1>
+      <ChapterActions id={doc._id} />
       <MDXContent code={doc.body.code} />
       <hr />
       <nav className="flex justify-between text-sm">
