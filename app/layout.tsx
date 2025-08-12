@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
             <Link href="/" className="text-2xl font-heading text-royal-gold">Elnsburg Continuum</Link>
             <nav className="flex gap-6 text-sm text-parchment">
-              <Link href="/#novels" className="hover:text-royal-gold">Novels</Link>
+              <Link href="/novels" className="hover:text-royal-gold">Novels</Link>
               <Link href="/wiki" className="hover:text-royal-gold">Wiki</Link>
               <a href="/api/rss" className="hover:text-royal-gold">RSS</a>
             </nav>
