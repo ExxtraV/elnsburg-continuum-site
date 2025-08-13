@@ -2,6 +2,7 @@ import { allChapters } from "contentlayer/generated";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { MDXContent } from "@/components/mdx-content";
+import Comments from "@/components/comments";
 
 export function generateStaticParams() {
   return allChapters.map((c) => ({
@@ -33,6 +34,7 @@ export default function ChapterPage({ params }: { params: { series: string; chap
         <div>{prev && <Link href={prev.slug}>← {prev.title}</Link>}</div>
         <div>{next && <Link href={next.slug}>{next.title} →</Link>}</div>
       </nav>
+      <Comments series={params.series} chapter={params.chapter} />
       <p className="text-xs text-parchment/70 mt-8">Series: {doc.series} • Chapter {doc.chapter}</p>
     </article>
   );
