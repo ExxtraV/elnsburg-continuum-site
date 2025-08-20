@@ -7,6 +7,7 @@ This repo powers **The Elnsburg Continuum** wiki. The companion webnovel is host
 - **Next.js 14** with the App Router and TypeScript
 - **MDX + Contentlayer** for type‑safe content sourced from the `content/` directory
 - **Tailwind CSS** for styling
+- Simple admin page for drafting wiki entries (`/admin`)
 
 ## Quick start
 ```bash
@@ -14,6 +15,10 @@ npm i
 npm run dev
 ```
 Wiki content lives in `content/wiki/*.mdx`. Edit or add files, and the site updates.
+
+An in-browser editor at `/admin` can publish entries without touching files.
+Set `ADMIN_PASSWORD`, `GITHUB_REPO` and `GITHUB_TOKEN` env vars for it to commit back
+to the repository.
 
 ## Authoring
 
