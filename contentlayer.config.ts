@@ -4,36 +4,6 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import remarkGfm from "remark-gfm";
 import remarkWikiLinks from "./lib/remark-wikilinks";
 
-export const Chapter = defineDocumentType(() => ({
-  name: "Chapter",
-  filePathPattern: `novels/**/chapters/*.mdx`,
-  contentType: "mdx",
-  fields: {
-    title: { type: "string", required: true },
-    chapter: { type: "number", required: true },
-    date: { type: "date", required: true },
-    series: { type: "string", required: true },
-    synopsis: { type: "string", required: false },
-    status: { type: "string", required: false },
-    characters: { type: "list", of: { type: "string" }, required: false }
-  },
-  computedFields: {
-    slug: {
-      type: "string",
-      resolve: (doc) => {
-        const parts = doc._raw.flattenedPath.split("/");
-        const series = parts[1];
-        const file = parts.at(-1)?.replace(/\.mdx?$/, "") || "chapter";
-        return `/novels/${series}/${file}`;
-      }
-    },
-    seriesSlug: {
-      type: "string",
-      resolve: (doc) => doc._raw.flattenedPath.split("/")[1]
-    }
-  }
-}));
-
 export const Wiki = defineDocumentType(() => ({
   name: "Wiki",
   filePathPattern: `wiki/**/*.mdx`,
@@ -53,7 +23,7 @@ export const Wiki = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: "content",
-  documentTypes: [Chapter, Wiki],
+  documentTypes: [Wiki],
   mdx: {
     remarkPlugins: [remarkGfm, remarkWikiLinks],
     rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: "wrap" }]]
