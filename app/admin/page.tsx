@@ -131,11 +131,28 @@ export default function AdminPage() {
       <label className="grid gap-1">
         <span className="text-sm">Content (MDX)</span>
         <textarea
-          className="border rounded px-3 py-2 min-h-[300px] font-mono"
+          className="border rounded px-3 py-2 min-h-[300px] font-mono text-zinc-900 dark:text-zinc-100"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
       </label>
+      <details className="border rounded px-3 py-2 bg-zinc-50 text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-100">
+        <summary className="cursor-pointer">MDX Guide</summary>
+        <ul className="mt-2 list-disc pl-4 space-y-1">
+          <li>
+            <code># Heading</code> creates a heading
+          </li>
+          <li>
+            <code>**bold**</code> and <code>*italic*</code> text
+          </li>
+          <li>
+            <code>[link](https://example.com)</code> for links
+          </li>
+          <li>
+            Use the built-in <code>&lt;Spoiler&gt;</code> component
+          </li>
+        </ul>
+      </details>
       <div className="flex items-center gap-3">
         <button
           className="rounded px-4 py-2 border disabled:opacity-50"
