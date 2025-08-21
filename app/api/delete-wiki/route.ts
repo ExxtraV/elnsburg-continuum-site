@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 function slugify(input: string) {
-  return input.toLowerCase().trim().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  return input
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 export async function POST(req: NextRequest) {
@@ -20,7 +25,9 @@ export async function POST(req: NextRequest) {
   const [owner, repoName] = repo.split("/");
   const branch = process.env.GITHUB_DEFAULT_BRANCH || "main";
   const apiBase = `https://api.github.com`;
-  const contentsUrl = `${apiBase}/repos/${owner}/${repoName}/contents/${encodeURIComponent(path)}`;
+  const contentsUrl = `${apiBase}/repos/${owner}/${repoName}/contents/${encodeURIComponent(
+    path
+  )}`;
   const headers = {
     Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
     Accept: "application/vnd.github+json",
@@ -30,11 +37,15 @@ export async function POST(req: NextRequest) {
   const res = await fetch(`${contentsUrl}?ref=${branch}`, { headers });
   if (!res.ok) {
     const msg = await res.text().catch(() => "");
-    return NextResponse.json({ error: "File not found or cannot fetch", details: msg || res.statusText }, { status: 404 });
+    return NextResponse.json(
+      { error: "File not found or cannot fetch", details: msg || res.statusText },
+      { status: 404 }
+    );
   }
   const json = (await res.json()) as { sha?: string };
   const sha = json.sha;
-  if (!sha) return NextResponse.json({ error: "Could not read file SHA" }, { status: 500 });
+  if (!sha)
+    return NextResponse.json({ error: "Could not read file SHA" }, { status: 500 });
 
   const del = await fetch(contentsUrl, {
     method: "DELETE",
@@ -48,7 +59,10 @@ export async function POST(req: NextRequest) {
 
   if (!del.ok) {
     const text = await del.text().catch(() => "");
-    return NextResponse.json({ error: "GitHub DELETE failed", details: text || del.statusText }, { status: 500 });
+    return NextResponse.json(
+      { error: "GitHub DELETE failed", details: text || del.statusText },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ ok: true, path });

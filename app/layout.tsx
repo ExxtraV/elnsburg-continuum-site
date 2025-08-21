@@ -4,15 +4,12 @@ import Link from "next/link";
 import { Cinzel, Merriweather } from "next/font/google";
 
 export const metadata: Metadata = {
-  title: "The Elnsburg Continuum",
-  description: "Webnovels + Wiki for the Elnsburg Continuum",
+  title: "The Elnsburg Continuum Wiki",
+  description: "Lore wiki for the Elnsburg Continuum",
   openGraph: {
-    title: "The Elnsburg Continuum",
-    description: "Webnovels + Wiki for the Elnsburg Continuum",
+    title: "The Elnsburg Continuum Wiki",
+    description: "Lore wiki for the Elnsburg Continuum",
     type: "website"
-  },
-  alternates: {
-    types: { "application/rss+xml": "/api/rss" }
   }
 };
 
@@ -27,9 +24,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="mx-auto max-w-5xl px-4 py-4 flex items-center justify-between">
             <Link href="/" className="text-2xl font-heading text-royal-gold">Elnsburg Continuum</Link>
             <nav className="flex gap-6 text-sm text-parchment">
-              <Link href="/novels" className="hover:text-royal-gold">Novels</Link>
               <Link href="/wiki" className="hover:text-royal-gold">Wiki</Link>
-              <a href="/api/rss" className="hover:text-royal-gold">RSS</a>
+              <a
+                href="https://www.run-write.com/elnsburg"
+                className="hover:text-royal-gold"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Read the Novel
+              </a>
             </nav>
           </div>
         </header>

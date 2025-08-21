@@ -1,36 +1,28 @@
-# The Elnsburg Continuum — Webnovel + Wiki Starter
+# The Elnsburg Continuum — Wiki
 
-This repo powers **The Elnsburg Continuum**, a template for hosting a serialised
-webnovel alongside a companion world wiki. It uses modern tooling to make
-writing and publishing chapters or lore entries as simple as editing a Markdown
-file.
+This repo powers **The Elnsburg Continuum** wiki. The companion webnovel is hosted separately at [run-write.com/elnsburg](https://www.run-write.com/elnsburg).
 
 ## Features
 
 - **Next.js 14** with the App Router and TypeScript
-- **MDX + Contentlayer** for type‑safe content sourced from the `content/`
-  directory
+- **MDX + Contentlayer** for type‑safe content sourced from the `content/` directory
 - **Tailwind CSS** for styling
-- Built‑in admin pages for creating chapters and wiki entries without touching
-  files (`/admin` and `/admin/wiki`)
+- Simple admin page for drafting wiki entries (`/admin`)
 
 ## Quick start
 ```bash
 npm i
 npm run dev
 ```
-Content lives in `content/novels/*/chapters/*.mdx` and `content/wiki/*.mdx`.
-Edit or add files, and the site updates.
+Wiki content lives in `content/wiki/*.mdx`. Edit or add files, and the site updates.
 
-An admin interface is available for quickly creating content without touching the files directly:
-
-- `(/admin)` for novel chapters
-- `(/admin/wiki)` for wiki entries
+An in-browser editor at `/admin` can publish or delete entries without touching files.
+Set `ADMIN_PASSWORD`, `GITHUB_REPO` and `GITHUB_TOKEN` env vars for it to commit back
+to the repository.
 
 ## Authoring
 
-Use double brackets to link to wiki pages. Writing `[[elnsburg-overview]]` in your
-chapter or wiki entry will automatically link to `/wiki/elnsburg-overview`.
+Use double brackets to link to wiki pages. Writing `[[elnsburg-overview]]` in your entry will automatically link to `/wiki/elnsburg-overview`.
 
 ## Deploy
 - Vercel recommended: import repo, set `NEXT_PUBLIC_SITE_URL` env (e.g., https://your-domain)
