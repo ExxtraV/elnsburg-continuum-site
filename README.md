@@ -16,7 +16,7 @@ npm run dev
 ```
 Wiki content lives in `content/wiki/*.mdx`. Edit or add files, and the site updates.
 
-An in-browser editor at `/admin` can publish entries without touching files.
+An in-browser editor at `/admin` can publish or delete entries without touching files.
 Set `ADMIN_PASSWORD`, `GITHUB_REPO` and `GITHUB_TOKEN` env vars for it to commit back
 to the repository.
 
