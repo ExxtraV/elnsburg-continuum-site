@@ -131,7 +131,7 @@ export default function AdminPage() {
       <label className="grid gap-1">
         <span className="text-sm">Content (MDX)</span>
         <textarea
-          className="border rounded px-3 py-2 min-h-[300px] font-mono text-blue-700"
+          className="border rounded px-3 py-2 min-h-[300px] font-mono text-zinc-900 dark:text-zinc-100"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
