@@ -136,7 +136,7 @@ export default function AdminPage() {
           onChange={(e) => setContent(e.target.value)}
         />
       </label>
-      <details className="border rounded px-3 py-2 bg-zinc-50 text-sm">
+      <details className="border rounded px-3 py-2 bg-zinc-50 text-sm text-zinc-800 dark:bg-zinc-800 dark:text-zinc-100">
         <summary className="cursor-pointer">MDX Guide</summary>
         <ul className="mt-2 list-disc pl-4 space-y-1">
           <li>
